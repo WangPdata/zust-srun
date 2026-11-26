@@ -102,12 +102,14 @@ nohup python3 login.py >/dev/null 2>&1 &
 
 ## 开机自启
 
-Windows —— 任务计划程序：
+Windows —— 
+方法1、任务计划程序：
 
 1. 创建任务，操作选「启动程序」，程序填 `login.bat` 的完整路径
 2. 触发器选「登录时」或「开机时」，勾选「不管用户是否登录都要运行」
 3. 因脚本末尾含 `pause`，进程会常驻一个命令行窗口；若不希望常驻，可把 `pause` 改为 `exit /b 0`
 
+方法2、win+R shell:startup 中粘入login.bat
 Linux —— systemd：
 
 ```ini
